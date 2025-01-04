@@ -1,0 +1,57 @@
+docker commands 
+>> docker build -t kubernetes-test-app:latest
+>> docker images 
+>> docker run -p 5000:5000 kubernetes-test-app:latest
+
+Now create the deployment.yaml file  -> use the kubernetes extension of vs code 
+#optional
+// we dont use this in the production grade 
+Install the MiniKube -> fr the cluster image formate 
+// for making the cluster 
+>> minikube start
+>> minikube status 
+
+// for the procduction grade purpose 
+kubectl get all -A
+// for getting all the podes 
+kubectl get pods -A 
+// for the nodes 
+kubectl get nodes -A
+
+#optional
+// for getting new nodes 
+minikube start --nodes=2
+
+minikube image list 
+docker images 
+// for adding the image into the kubernets cluster 
+minikube image load kubernetes-test-app:latest
+
+// project dir mein se krna h ye 
+kubectl apply -f deployment.yaml ( from the preoject dir )
+kubectl delete deployment kubernetes-test-app
+
+// for deleting the pod manually  [dont use it]
+kubectl delete pod <pod name / id  > 
+
+// lookin at all the services 
+minikube service kubernetes-test-app
+
+// for the dashboard purpose
+minikube dashboard 
+
+kubectl get endpoints 
+kubectl get service
+
+# for load balancing 
+kubectl get pods 
+kubectl logs -f <pod_id>
+>> Postman -> collections -> runs -> Performance -> run performance -> performance -> (fixed - 10 user - 1min)
+
+
+minikube stop
+
+
+
+
+
